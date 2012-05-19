@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mono.Samples.log4net", "Mono.Samples.log4net\Mono.Samples.log4net.csproj", "{9FBC132D-485C-433D-B2F4-6E5F96A31542}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FBC132D-485C-433D-B2F4-6E5F96A31542}.Debug|x86.ActiveCfg = Debug|x86
+		{9FBC132D-485C-433D-B2F4-6E5F96A31542}.Debug|x86.Build.0 = Debug|x86
+		{9FBC132D-485C-433D-B2F4-6E5F96A31542}.Release|x86.ActiveCfg = Release|x86
+		{9FBC132D-485C-433D-B2F4-6E5F96A31542}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Mono.Samples.log4net\Mono.Samples.log4net.csproj
+	EndGlobalSection
+EndGlobal
