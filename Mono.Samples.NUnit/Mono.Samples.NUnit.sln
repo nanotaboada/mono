@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mono.Samples.NUnit", "Mono.Samples.NUnit\Mono.Samples.NUnit.csproj", "{AA67311F-C201-4E9E-9B0C-9BFF3E387784}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA67311F-C201-4E9E-9B0C-9BFF3E387784}.Debug|x86.ActiveCfg = Debug|x86
+		{AA67311F-C201-4E9E-9B0C-9BFF3E387784}.Debug|x86.Build.0 = Debug|x86
+		{AA67311F-C201-4E9E-9B0C-9BFF3E387784}.Release|x86.ActiveCfg = Release|x86
+		{AA67311F-C201-4E9E-9B0C-9BFF3E387784}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Mono.Samples.NUnit\Mono.Samples.NUnit.csproj
+	EndGlobalSection
+EndGlobal
