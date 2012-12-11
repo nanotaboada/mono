@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D735956D-8B55-442E-A484-C434749AF695}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Mono.Samples.ServiceStack/RootNamespace>
+    <AssemblyName>Mono.Samples.ServiceStack</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="ServiceStack">
+      <HintPath>lib\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>lib\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Posix" />
+    <Reference Include="ServiceStack.Common">
+      <HintPath>lib\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.ServiceInterface">
+      <HintPath>lib\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>lib\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Program.cs" />
+    <Compile Include="src\AssemblyInfo.cs" />
+    <Compile Include="src\Response.cs" />
+    <Compile Include="src\Service.cs" />
+    <Compile Include="src\Request.cs" />
+    <Compile Include="src\Host.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="lib\" />
+    <Folder Include="src\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lib\ServiceStack.dll" />
+    <None Include="lib\ServiceStack.Text.dll" />
+    <None Include="lib\ServiceStack.Common.dll" />
+    <None Include="lib\ServiceStack.ServiceInterface.dll" />
+    <None Include="lib\ServiceStack.Interfaces.dll" />
+  </ItemGroup>
+</Project>
