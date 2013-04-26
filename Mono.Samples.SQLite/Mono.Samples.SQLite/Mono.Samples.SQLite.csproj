@@ -50,7 +50,9 @@
     <Folder Include="res\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\catalog.sqlite" />
+    <None Include="res\catalog.sqlite">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="lib\System.Data.SQLite.dll" />
   </ItemGroup>
 </Project>
