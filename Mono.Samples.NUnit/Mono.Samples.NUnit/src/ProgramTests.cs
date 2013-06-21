@@ -38,26 +38,40 @@ namespace Mono.Samples.NUnit
     public class ProgramTests
     {
         public Program program { get; private set; }
-
+        
         [SetUp]
         public void Setup()
         {
             this.program = new Program();
         }
-
+        
         [Test]
-        public void GetPangram_ReturnValueIsNotNullOrEmpty_ReturnsTrue()
+        public void GetPangram_ExpectedValue_IsNotNullOrEmpty()
         {
-            Assert.IsNotNullOrEmpty(program.GetPangram());
+            // Arrange
+            string expected;
+            
+            // Act
+            expected = program.GetPangram();
+            
+            // Assert
+            Assert.IsNotNullOrEmpty(expected);
         }
-
+        
         [Test]
-        public void GetPangram_ReturnValueEqualsExpectedString_ReturnsTrue()
+        public void GetPangram_ExpectedAndActualValues_AreEqual()
         {
+            // Arrange
             string expected = "The quick brown fox jumps over the lazy dog.";
-            Assert.AreEqual(expected, program.GetPangram());
+            string actual;
+            
+            // Act
+            actual = program.GetPangram();
+            
+            // Assert
+            Assert.AreEqual(expected, actual);
         }
-
+        
         [TearDown]
         public void TearDown()
         {

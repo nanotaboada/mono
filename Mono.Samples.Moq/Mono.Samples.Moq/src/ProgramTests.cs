@@ -43,14 +43,20 @@ namespace Mono.Samples.Moq
         public void Setup()
         {
             this.mock = new Mock<IProgram>();
-            this.mock.Setup(x => x.GetPangram()).Returns("Lorem ipsum dolor sit amet.");
         }
 
         [Test]
         [TestCase("Lorem ipsum dolor sit amet.")]
-        public void GetPangram_ReturnValueEqualsExpectedString_ReturnsTrue(string expected)
+        public void GetPangram_ExpectedAndActualValues_AreEqual(string expected)
         {
-            Assert.AreEqual(this.mock.Object.GetPangram(), expected);
+            // Arrange
+            this.mock.Setup(x => x.GetPangram()).Returns("Lorem ipsum dolor sit amet.");
+            
+            // Act
+            string actual = this.mock.Object.GetPangram();
+            
+            // Assert
+            Assert.AreEqual(actual, expected);
         }
 
         [TearDown]
