@@ -1,6 +1,5 @@
-# Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
-bin
-obj
-
-# mstest test results
-TestResults
+Mono.Samples*/test-results
+Mono.Samples*/*.userprefs
+Mono.Samples*/Mono.Samples*/bin
+Mono.Samples*/Mono.Samples*/test-results
+Mono.Samples*/Mono.Samples*/*.pidb
