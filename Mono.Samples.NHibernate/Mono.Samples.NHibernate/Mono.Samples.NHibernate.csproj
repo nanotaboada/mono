@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{865FC48C-3B12-4EB9-AA5B-3EF06398EFA9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Mono.Samples.NHibernate</RootNamespace>
+    <AssemblyName>Mono.Samples.NHibernate</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Iesi.Collections">
+      <HintPath>lib\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate">
+      <HintPath>lib\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>lib\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Data.Sqlite">
+      <HintPath>lib\Mono.Data.Sqlite.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="lib\" />
+    <Folder Include="res\" />
+    <Folder Include="cfg\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\MonoDataSqliteDriver.cs" />
+    <Compile Include="src\Program.cs" />
+    <Compile Include="src\Book.cs" />
+    <Compile Include="src\BookMap.cs" />
+    <Compile Include="src\SessionFactory.cs" />
+    <Compile Include="src\Extensions.cs" />
+    <Compile Include="src\MonoDataSqliteConfiguration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lib\FluentNHibernate.dll" />
+    <None Include="lib\Iesi.Collections.dll" />
+    <None Include="lib\NHibernate.dll" />
+    <None Include="res\catalog.sqlite">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cfg\App.config" />
+  </ItemGroup>
+</Project>
