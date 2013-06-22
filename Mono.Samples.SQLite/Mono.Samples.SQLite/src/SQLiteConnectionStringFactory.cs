@@ -30,36 +30,15 @@ using System.Text;
 
 namespace Mono.Samples.Sqlite
 {
-    public static class Helpers
+    public static class SQLiteConnectionStringFactory
     {
         public static string GetConnectionString()
         {
             var res = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "res");
             var str = new SQLiteConnectionStringBuilder();
-			
-			str.DataSource = Path.Combine(res, "catalog.sqlite");	
+            str.DataSource = Path.Combine(res, "catalog.sqlite");	
 
             return str.ConnectionString;
-        }
-		
-		
-        public static string FormatConsoleOutput(SQLiteDataReader reader)
-        {
-            var txt = new StringBuilder();
-			
-			txt.AppendLine(string.Format("{0,-37} {1,-23} {2,10} {3,5}", "-".Repeat(37), "-".Repeat(23), "-".Repeat(10), "-".Repeat(5)));
-            txt.AppendLine(string.Format("{0,-37} {1,-23} {2,-10} {3,-5}", "Title", "Author", "Published", "Pages"));
-            txt.AppendLine(string.Format("{0,-37} {1,-23} {2,10} {3,5}", "-".Repeat(37), "-".Repeat(23), "-".Repeat(10), "-".Repeat(5)));
-
-			while (reader.Read())
-            {
-                txt.AppendFormat("{0,-37} {1,-23} {2,10} {3,5}", reader.GetString(1), reader.GetString(2), reader.GetDateTime(4).ToShortDateString(), reader.GetValue(5));
-                txt.Append(Environment.NewLine);
-            }
-			
-            txt.AppendLine(String.Format("{0,-37} {1,-23} {2,10} {3,5}", "-".Repeat(37), "-".Repeat(23), "-".Repeat(10), "-".Repeat(5)));
-
-            return txt.ToString();
         }
 	}
 }

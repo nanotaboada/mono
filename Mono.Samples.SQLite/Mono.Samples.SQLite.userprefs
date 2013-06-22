@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Mono.Samples.SQLite/src/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Mono.Samples.SQLite/src/Extensions.cs">
     <Files>
-      <File FileName="Mono.Samples.SQLite/src/Helpers.cs" Line="39" Column="4" />
-      <File FileName="Mono.Samples.SQLite/src/Program.cs" Line="31" Column="1" />
+      <File FileName="Mono.Samples.SQLite/src/SQLiteConnectionStringFactory.cs" Line="33" Column="54" />
+      <File FileName="Mono.Samples.SQLite/src/Program.cs" Line="38" Column="16" />
+      <File FileName="Mono.Samples.SQLite/src/Extensions.cs" Line="24" Column="14" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +14,7 @@
             <Node name="lib" expanded="True" />
             <Node name="res" expanded="True" />
             <Node name="src" expanded="True">
-              <Node name="Program.cs" selected="True" />
+              <Node name="Extensions.cs" selected="True" />
             </Node>
           </Node>
         </State>

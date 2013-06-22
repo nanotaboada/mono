@@ -33,10 +33,11 @@ namespace Mono.Samples.Sqlite
         static void Main()
         {
             var statement = "SELECT * FROM Books";
+            var connectionString = SQLiteConnectionStringFactory.GetConnectionString();
 
             try
             {
-                using (var connection = new SQLiteConnection(Helpers.GetConnectionString()))
+                using (var connection = new SQLiteConnection(connectionString))
                 {
                     connection.Open();
                     using (var transaction = connection.BeginTransaction())
@@ -49,7 +50,7 @@ namespace Mono.Samples.Sqlite
                                 {
                                     if (reader.HasRows)
                                     {
-                                        Console.WriteLine(Helpers.FormatConsoleOutput(reader));   
+                                        Console.WriteLine(reader.ToConsole());   
                                     }
                                 }
                             }

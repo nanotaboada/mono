@@ -20,26 +20,49 @@
 // THE SOFTWARE. 
 #endregion
 
+#region References
+using System;
+using System.Text;
+using System.Data.SQLite;
+#endregion
+
 namespace Mono.Samples.Sqlite
 {
-    #region References
-    using System.Text;
-    #endregion
-
     public static class Extensions
     {
         public static string Repeat(this char character, int frequency)
         {
             return new string(character, frequency);
         }
+        
         public static string Repeat(this string content, int frequency)
         {
             var container = new StringBuilder(frequency * content.Length);
+            
             for (int i = 0; i < frequency; i++)
             {
                 container.Append(content);
             }
+            
             return container.ToString();
+        }
+        
+        public static string ToConsole(this SQLiteDataReader reader)
+        {
+            var txt = new StringBuilder();
+            txt.AppendLine(string.Format("{0,-37} {1,-23} {2,10} {3,5}", "-".Repeat(37), "-".Repeat(23), "-".Repeat(10), "-".Repeat(5)));
+            txt.AppendLine(string.Format("{0,-37} {1,-23} {2,-10} {3,-5}", "Title", "Author", "Published", "Pages"));
+            txt.AppendLine(string.Format("{0,-37} {1,-23} {2,10} {3,5}", "-".Repeat(37), "-".Repeat(23), "-".Repeat(10), "-".Repeat(5)));
+
+            while (reader.Read())
+            {
+                txt.AppendFormat("{0,-37} {1,-23} {2,10} {3,5}", reader.GetString(1), reader.GetString(2), reader.GetDateTime(4).ToShortDateString(), reader.GetValue(5));
+                txt.Append(Environment.NewLine);
+            }
+         
+            txt.AppendLine(String.Format("{0,-37} {1,-23} {2,10} {3,5}", "-".Repeat(37), "-".Repeat(23), "-".Repeat(10), "-".Repeat(5)));
+
+            return txt.ToString();
         }
     }
 }

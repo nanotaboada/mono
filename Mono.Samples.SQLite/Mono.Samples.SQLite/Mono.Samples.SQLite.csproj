@@ -40,8 +40,8 @@
   <ItemGroup>
     <Compile Include="src\Program.cs" />
     <Compile Include="src\AssemblyInfo.cs" />
-    <Compile Include="src\Helpers.cs" />
     <Compile Include="src\Extensions.cs" />
+    <Compile Include="src\SQLiteConnectionStringFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
